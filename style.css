@@ -1,0 +1,2035 @@
+/* =========================================================
+   CYBERCRIME AWARENESS
+   Premium Interactive Stylesheet
+   HTML structure preserved
+   ========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+   ========================================================= */
+
+:root {
+    --bg-main: #070b14;
+    --bg-secondary: #0b1220;
+    --bg-panel: rgba(15, 23, 42, 0.82);
+    --bg-panel-light: rgba(30, 41, 59, 0.68);
+
+    --text-main: #eef4ff;
+    --text-secondary: #aebbd0;
+    --text-muted: #7f8da5;
+
+    --cyan: #22d3ee;
+    --cyan-soft: rgba(34, 211, 238, 0.14);
+
+    --blue: #3b82f6;
+    --blue-soft: rgba(59, 130, 246, 0.14);
+
+    --purple: #a855f7;
+    --purple-soft: rgba(168, 85, 247, 0.14);
+
+    --pink: #ec4899;
+    --pink-soft: rgba(236, 72, 153, 0.14);
+
+    --orange: #f59e0b;
+    --orange-soft: rgba(245, 158, 11, 0.14);
+
+    --red: #ef4444;
+    --red-soft: rgba(239, 68, 68, 0.14);
+
+    --green: #22c55e;
+    --green-soft: rgba(34, 197, 94, 0.14);
+
+    --border: rgba(148, 163, 184, 0.16);
+    --border-strong: rgba(148, 163, 184, 0.28);
+
+    --shadow-sm: 0 8px 25px rgba(0, 0, 0, 0.18);
+    --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.28);
+    --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.38);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+
+    --space-xs: 0.4rem;
+    --space-sm: 0.7rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2.25rem;
+    --space-2xl: 3.5rem;
+
+    --transition-fast: 180ms ease;
+    --transition: 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-slow: 600ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    --content-width: 1180px;
+}
+
+
+/* =========================================================
+   02. RESET & BASE
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.08), transparent 28rem),
+        radial-gradient(circle at 90% 15%, rgba(168, 85, 247, 0.08), transparent 30rem),
+        radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.07), transparent 32rem),
+        var(--bg-main);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+::selection {
+    color: #ffffff;
+    background: var(--cyan);
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        var(--cyan),
+        var(--purple)
+    );
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+b {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+p,
+data,
+li {
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   03. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2 {
+    margin-top: 0;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+body > h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+    padding: 4.5rem 1.5rem 3rem;
+
+    text-align: center;
+    font-size: clamp(2.3rem, 6vw, 5.5rem);
+    letter-spacing: -0.055em;
+
+    color: transparent;
+
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff 0%,
+            var(--cyan) 38%,
+            #ffffff 58%,
+            var(--purple) 100%
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: titleReveal 900ms ease both;
+}
+
+body > h1::after {
+    content: "";
+    display: block;
+
+    width: min(180px, 35vw);
+    height: 3px;
+
+    margin: 1.4rem auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cyan),
+        var(--purple),
+        transparent
+    );
+
+    border-radius: 999px;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.5);
+}
+
+article > h1 {
+    position: relative;
+
+    margin-bottom: 1.7rem;
+
+    font-size: clamp(1.65rem, 3vw, 2.7rem);
+    letter-spacing: -0.025em;
+
+    color: #ffffff;
+}
+
+section > article > h1 {
+    padding-bottom: 1rem;
+}
+
+section > article > h1::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 75px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--purple)
+    );
+}
+
+article > h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+}
+
+article > h2 li {
+    display: inline-block;
+
+    padding: 0.8rem 1.15rem;
+
+    color: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 211, 238, 0.1),
+            rgba(168, 85, 247, 0.08)
+        );
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+article > h2:hover li {
+    transform: translateX(8px);
+
+    border-color: rgba(34, 211, 238, 0.45);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 211, 238, 0.16),
+            rgba(168, 85, 247, 0.14)
+        );
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(34, 211, 238, 0.08);
+}
+
+
+/* =========================================================
+   04. MAIN LAYOUT
+   ========================================================= */
+
+body {
+    padding-bottom: 5rem;
+}
+
+body > article,
+body > section {
+    width: min(calc(100% - 32px), var(--content-width));
+    margin-inline: auto;
+}
+
+body > article {
+    position: relative;
+
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 23, 42, 0.92),
+            rgba(8, 15, 28, 0.84)
+        );
+
+    box-shadow: var(--shadow-lg);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    animation: fadeUp 700ms ease both;
+}
+
+body > article::before {
+    content: "";
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(34, 211, 238, 0.06),
+            transparent 30%,
+            rgba(168, 85, 247, 0.05)
+        );
+
+    pointer-events: none;
+}
+
+body > section {
+    position: relative;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    animation: fadeUp 700ms ease both;
+}
+
+body > section > article {
+    position: relative;
+
+    padding: clamp(1.3rem, 3vw, 2.8rem);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 23, 42, 0.86),
+            rgba(8, 15, 28, 0.72)
+        );
+
+    box-shadow: var(--shadow-md);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+body > section > article:hover {
+    border-color: var(--border-strong);
+
+    box-shadow:
+        var(--shadow-lg),
+        0 0 50px rgba(34, 211, 238, 0.035);
+}
+
+
+/* =========================================================
+   05. INTRO / DEFINITION AREA
+   ========================================================= */
+
+body > article data {
+    display: block;
+
+    position: relative;
+
+    padding: 1.35rem 1.5rem;
+    margin-top: 1rem;
+
+    color: var(--text-secondary);
+
+    border-left: 4px solid var(--cyan);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(34, 211, 238, 0.09),
+            rgba(34, 211, 238, 0.025),
+            transparent
+        );
+
+    box-shadow: inset 0 0 25px rgba(34, 211, 238, 0.025);
+}
+
+body > article data b {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   06. NAVIGATION / CYBERCRIME TYPES
+   ========================================================= */
+
+.cybercrime-types {
+    position: sticky;
+    top: 15px;
+    z-index: 50;
+
+    margin-top: 1.5rem;
+    padding: 1rem;
+
+    border: 1px solid rgba(34, 211, 238, 0.18);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 15, 28, 0.95),
+            rgba(15, 23, 42, 0.9)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(34, 211, 238, 0.04);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition);
+}
+
+.cybercrime-types:hover {
+    border-color: rgba(34, 211, 238, 0.35);
+}
+
+.cybercrime-types ul {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 0.65rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.cybercrime-types li {
+    min-width: 0;
+}
+
+.cybercrime-types a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 62px;
+    padding: 0.8rem;
+
+    text-align: center;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.65),
+            rgba(15, 23, 42, 0.55)
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.cybercrime-types a::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.08),
+            transparent 80%
+        );
+
+    transform: translateX(-120%);
+
+    transition: transform 600ms ease;
+}
+
+.cybercrime-types a:hover::before {
+    transform: translateX(120%);
+}
+
+.cybercrime-types a:hover {
+    transform: translateY(-5px);
+
+    color: #ffffff;
+
+    border-color: rgba(34, 211, 238, 0.5);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34, 211, 238, 0.15),
+            rgba(59, 130, 246, 0.1)
+        );
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.28),
+        0 0 22px rgba(34, 211, 238, 0.09);
+}
+
+.cybercrime-types a:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+
+/* =========================================================
+   07. CATEGORY-SPECIFIC VISUAL STYLES
+   ========================================================= */
+
+/* Financial */
+#financial-crimes {
+    border-color: rgba(34, 197, 94, 0.18);
+}
+
+#financial-crimes > h1::after {
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+}
+
+#financial-crimes article > h2 li,
+#financial-crimes > ol > h2 li {
+    border-left: 4px solid var(--green);
+}
+
+/* Privacy */
+#privacy-crimes {
+    border-color: rgba(168, 85, 247, 0.18);
+}
+
+#privacy-crimes > h1::after {
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+#privacy-crimes > ol > h2 li {
+    border-left: 4px solid var(--purple);
+}
+
+/* Harassment */
+#harassment-crimes {
+    border-color: rgba(236, 72, 153, 0.18);
+}
+
+#harassment-crimes > h1::after {
+    background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+#harassment-crimes > ol > h2 li {
+    border-left: 4px solid var(--pink);
+}
+
+/* Device */
+#device-crimes {
+    border-color: rgba(239, 68, 68, 0.18);
+}
+
+#device-crimes > h1::after {
+    background: linear-gradient(90deg, var(--red), var(--orange));
+}
+
+#device-crimes > ol > h2 li {
+    border-left: 4px solid var(--red);
+}
+
+/* Identity */
+#identity-crimes {
+    border-color: rgba(245, 158, 11, 0.18);
+}
+
+#identity-crimes > h1::after {
+    background: linear-gradient(90deg, var(--orange), var(--cyan));
+}
+
+#identity-crimes > ol > h2 li {
+    border-left: 4px solid var(--orange);
+}
+
+
+/* =========================================================
+   08. DEFINITION BLOCKS
+   ========================================================= */
+
+section article data {
+    display: block;
+
+    position: relative;
+
+    margin: 0.7rem 0;
+    padding: 1rem 1.25rem;
+
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.6),
+            rgba(15, 23, 42, 0.45)
+        );
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+section article data:hover {
+    transform: translateX(5px);
+
+    border-color: rgba(34, 211, 238, 0.3);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 211, 238, 0.08),
+            rgba(168, 85, 247, 0.05)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.22),
+        0 0 20px rgba(34, 211, 238, 0.04);
+}
+
+section article data b {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   09. "OR" DIVIDERS
+   ========================================================= */
+
+section article > ol > div,
+section article div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin: 0.7rem 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+section article div::before,
+section article div::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--border)
+        );
+}
+
+section article div::after {
+    background:
+        linear-gradient(
+            90deg,
+            var(--border),
+            transparent
+        );
+}
+
+section article div b {
+    margin-inline: 0.9rem;
+
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   10. CONTENT BLOCKS
+   ========================================================= */
+
+section article > p {
+    margin-top: 1.6rem;
+    margin-bottom: 0.7rem;
+
+    color: var(--text-main);
+}
+
+section article > p > b,
+section article p > b {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    color: #ffffff;
+}
+
+section article p > b::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    flex: 0 0 6px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow: 0 0 12px var(--cyan);
+}
+
+
+/* =========================================================
+   11. LISTS
+   ========================================================= */
+
+section article ul,
+section article ol {
+    padding-left: 1.45rem;
+}
+
+section article ul {
+    margin: 0.6rem 0 1.2rem;
+}
+
+section article li {
+    margin: 0.55rem 0;
+
+    color: var(--text-secondary);
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+section article ul li::marker {
+    color: var(--cyan);
+}
+
+section article ol li::marker {
+    color: var(--purple);
+    font-weight: 800;
+}
+
+section article li:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+section article > ol > li > b {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   12. SUB-TOPICS / EXAMPLE AREAS
+   ========================================================= */
+
+section article ol ol,
+section article ol ul {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    padding: 1rem 1.25rem;
+
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.65),
+            rgba(30, 41, 59, 0.3)
+        );
+}
+
+section article ol ol li,
+section article ol ul li {
+    color: var(--text-secondary);
+}
+
+section article ol li + p {
+    margin: 0.25rem 0;
+
+    color: var(--text-muted);
+    font-size: 0.94rem;
+}
+
+section article ol li + p b {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   13. EXAMPLE HIGHLIGHTS
+   ========================================================= */
+
+section article p b:first-child {
+    transition: color var(--transition-fast);
+}
+
+section article p:hover b {
+    color: var(--cyan);
+}
+
+section article ol p:has(b:first-child) {
+    padding: 0.25rem 0;
+}
+
+section article ol p b {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   14. WARNING / SAFETY CONTENT
+   ========================================================= */
+
+/* Warning-style paragraphs */
+section article p:has(+ ul) {
+    position: relative;
+}
+
+/* Warning lists */
+section article p:has(b):is(:nth-of-type(2), :nth-of-type(3)) + ul li {
+    transition:
+        background var(--transition),
+        transform var(--transition),
+        border-color var(--transition);
+}
+
+section article p + ul li {
+    border-radius: 8px;
+    padding: 0.15rem 0.4rem;
+}
+
+section article p + ul li:hover {
+    background: rgba(34, 211, 238, 0.035);
+}
+
+
+/* =========================================================
+   15. IMPORTANT / ITALIC INFORMATION
+   ========================================================= */
+
+section article i {
+    display: block;
+
+    margin: 1.2rem 0;
+    padding: 1rem 1.2rem;
+
+    color: #fde68a;
+
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(245, 158, 11, 0.1),
+            rgba(245, 158, 11, 0.025),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   16. SECTION INTERACTION
+   ========================================================= */
+
+section {
+    scroll-margin-top: 100px;
+}
+
+section:target {
+    animation: sectionFocus 800ms ease both;
+}
+
+section:target > article {
+    border-color: rgba(34, 211, 238, 0.32);
+
+    box-shadow:
+        var(--shadow-lg),
+        0 0 55px rgba(34, 211, 238, 0.07);
+}
+
+
+/* =========================================================
+   17. SHOW ONLY SELECTED CATEGORY WHEN A NAV LINK IS USED
+   ========================================================= */
+
+/*
+   The HTML already uses:
+   #financial-crimes
+   #privacy-crimes
+   #harassment-crimes
+   #device-crimes
+   #identity-crimes
+
+   Modern browsers can use :has() to make the category
+   navigation behave like a section switcher without JS.
+*/
+
+body:has(section:target) > section {
+    display: none;
+}
+
+body:has(section:target) > section:has(:target),
+body > section:has(> article:target) {
+    display: block;
+}
+
+/* Keep the navigation/category area visible */
+body > section > article:first-child {
+    display: block;
+}
+
+
+/* =========================================================
+   18. ACTIVE NAVIGATION FEEDBACK
+   ========================================================= */
+
+body:has(#financial-crimes:target)
+.cybercrime-types a[href="#financial-crimes"],
+
+body:has(#privacy-crimes:target)
+.cybercrime-types a[href="#privacy-crimes"],
+
+body:has(#harassment-crimes:target)
+.cybercrime-types a[href="#harassment-crimes"],
+
+body:has(#device-crimes:target)
+.cybercrime-types a[href="#device-crimes"],
+
+body:has(#identity-crimes:target)
+.cybercrime-types a[href="#identity-crimes"] {
+    color: #ffffff;
+
+    border-color: var(--cyan);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 211, 238, 0.2),
+            rgba(59, 130, 246, 0.12)
+        );
+
+    box-shadow:
+        0 0 22px rgba(34, 211, 238, 0.12),
+        inset 0 0 18px rgba(34, 211, 238, 0.04);
+}
+
+
+/* =========================================================
+   19. PREMIUM CARD-LIKE CONTENT
+   ========================================================= */
+
+section article ul li,
+section article ol li {
+    position: relative;
+}
+
+section article ul li::before {
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+section article ul li:hover::before {
+    transform: scale(1.3);
+}
+
+
+/* =========================================================
+   20. FOCUS STATES
+   ========================================================= */
+
+a:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
+
+    border-radius: var(--radius-sm);
+}
+
+.cybercrime-types a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   21. RESPONSIVE — LARGE TABLETS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .cybercrime-types ul {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    body > article,
+    body > section {
+        width: min(calc(100% - 24px), var(--content-width));
+    }
+
+    body > article {
+        padding: 2rem;
+    }
+}
+
+
+/* =========================================================
+   22. RESPONSIVE — TABLETS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body > h1 {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    body > article,
+    body > section {
+        width: calc(100% - 20px);
+    }
+
+    body > article,
+    body > section > article {
+        border-radius: var(--radius-lg);
+    }
+
+    body > article {
+        padding: 1.35rem;
+    }
+
+    body > section > article {
+        padding: 1.25rem;
+    }
+
+    .cybercrime-types {
+        top: 8px;
+        padding: 0.7rem;
+    }
+
+    .cybercrime-types ul {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 0.5rem;
+    }
+
+    .cybercrime-types a {
+        min-height: 58px;
+        padding: 0.7rem;
+
+        font-size: 0.78rem;
+    }
+
+    section article data {
+        padding: 0.95rem;
+    }
+
+    section article ul,
+    section article ol {
+        padding-left: 1.2rem;
+    }
+}
+
+
+/* =========================================================
+   23. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body > h1 {
+        font-size: 2.1rem;
+        padding-inline: 1rem;
+    }
+
+    body > article,
+    body > section {
+        width: calc(100% - 14px);
+    }
+
+    body > article {
+        padding: 1.05rem;
+    }
+
+    body > section > article {
+        padding: 1rem;
+    }
+
+    .cybercrime-types ul {
+        grid-template-columns: 1fr;
+    }
+
+    .cybercrime-types a {
+        justify-content: flex-start;
+
+        min-height: 50px;
+        padding-left: 1rem;
+
+        text-align: left;
+    }
+
+    article > h1 {
+        font-size: 1.55rem;
+    }
+
+    article > h2 {
+        font-size: 1.05rem;
+    }
+
+    article > h2 li {
+        display: block;
+        padding: 0.75rem 0.9rem;
+    }
+
+    section article data {
+        font-size: 0.93rem;
+    }
+
+    section article li {
+        font-size: 0.92rem;
+    }
+
+    section article ol ol,
+    section article ol ul {
+        padding: 0.75rem 0.9rem;
+    }
+}
+
+
+/* =========================================================
+   24. MICRO INTERACTIONS
+   ========================================================= */
+
+.cybercrime-types li:nth-child(1) a {
+    --item-accent: var(--green);
+}
+
+.cybercrime-types li:nth-child(2) a {
+    --item-accent: var(--purple);
+}
+
+.cybercrime-types li:nth-child(3) a {
+    --item-accent: var(--pink);
+}
+
+.cybercrime-types li:nth-child(4) a {
+    --item-accent: var(--red);
+}
+
+.cybercrime-types li:nth-child(5) a {
+    --item-accent: var(--orange);
+}
+
+.cybercrime-types li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: var(--item-accent, var(--cyan));
+
+    transition: width var(--transition);
+}
+
+.cybercrime-types li a:hover::after,
+.cybercrime-types li a:focus-visible::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   25. ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sectionFocus {
+    0% {
+        opacity: 0.65;
+        transform: translateY(12px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(34, 211, 238, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(34, 211, 238, 0.12);
+    }
+}
+
+
+/* =========================================================
+   26. SUBTLE BACKGROUND DEPTH
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    top: 10%;
+    right: -180px;
+
+    z-index: -1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168, 85, 247, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    animation: floatingGlow 8s ease-in-out infinite;
+}
+
+@keyframes floatingGlow {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(30px) scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   27. ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-contrast: more) {
+
+    :root {
+        --text-main: #ffffff;
+        --text-secondary: #e2e8f0;
+        --border: rgba(255, 255, 255, 0.35);
+        --border-strong: rgba(255, 255, 255, 0.55);
+    }
+
+    section article data,
+    .cybercrime-types a {
+        border-width: 2px;
+    }
+}
+
+
+/* =========================================================
+   28. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   29. PRINT
+   ========================================================= */
+
+@media print {
+
+    body {
+        color: #000000;
+        background: #ffffff;
+    }
+
+    body > h1 {
+        color: #000000;
+        background: none;
+        -webkit-text-fill-color: #000000;
+    }
+
+    body > article,
+    body > section > article,
+    .cybercrime-types {
+        color: #000000;
+
+        background: #ffffff;
+
+        border: 1px solid #cccccc;
+
+        box-shadow: none;
+    }
+
+    .cybercrime-types {
+        position: static;
+    }
+
+    .cybercrime-types a,
+    section article data,
+    section article li {
+        color: #000000;
+    }
+
+    body:has(section:target) > section {
+        display: block;
+    }
+}
+
+/* =========================================================
+   FIXED TOP MENU — TYPES OF CYBERCRIME
+   ========================================================= */
+
+/* Create permanent space for the fixed menu */
+body {
+    padding-top: 150px;
+}
+
+
+/* ---------------------------------------------------------
+   FIRST "TYPES OF CYBERCRIME" SECTION
+   --------------------------------------------------------- */
+
+body > section:first-of-type {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 12px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5, 10, 20, 0.97),
+            rgba(11, 18, 32, 0.96)
+        );
+
+    border-bottom: 1px solid rgba(34, 211, 238, 0.18);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        0 1px 0 rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+
+/* ---------------------------------------------------------
+   MENU TITLE
+   --------------------------------------------------------- */
+
+body > section:first-of-type > article {
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+
+/* Hide the unnecessary introductory paragraph */
+body > section:first-of-type > article > p {
+    display: none;
+}
+
+
+/* Menu heading */
+body > section:first-of-type > article > h1 {
+    width: fit-content;
+
+    margin: 0 auto 10px;
+
+    padding: 0;
+
+    font-size: 1.05rem;
+    line-height: 1.2;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+
+/* Small glowing line underneath title */
+body > section:first-of-type > article > h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 2px;
+
+    margin: 7px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #22d3ee,
+            #a855f7
+        );
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 12px rgba(34, 211, 238, 0.6);
+}
+
+
+/* ---------------------------------------------------------
+   MENU NAVIGATION
+   --------------------------------------------------------- */
+
+body > section:first-of-type
+.cybercrime-types {
+
+    position: static;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+
+/* Navigation list */
+body > section:first-of-type
+.cybercrime-types ul {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ---------------------------------------------------------
+   MENU BUTTONS
+   --------------------------------------------------------- */
+
+body > section:first-of-type
+.cybercrime-types li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Individual menu item */
+body > section:first-of-type
+.cybercrime-types a {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 7px 12px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    color: #aebbd0;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    border: 1px solid rgba(148, 163, 184, 0.14);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.72),
+            rgba(15, 23, 42, 0.6)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    transition:
+        transform 220ms ease,
+        color 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+}
+
+
+/* Shine animation */
+body > section:first-of-type
+.cybercrime-types a::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -120%;
+
+    width: 80%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.12),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 550ms ease;
+
+    pointer-events: none;
+}
+
+
+body > section:first-of-type
+.cybercrime-types a:hover::before {
+    left: 140%;
+}
+
+
+/* Bottom accent line */
+body > section:first-of-type
+.cybercrime-types a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    border-radius: 999px;
+
+    background: #22d3ee;
+
+    box-shadow:
+        0 0 10px rgba(34, 211, 238, 0.7);
+
+    transition: width 250ms ease;
+}
+
+
+/* Hover */
+body > section:first-of-type
+.cybercrime-types a:hover {
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(34, 211, 238, 0.45);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34, 211, 238, 0.13),
+            rgba(59, 130, 246, 0.08)
+        );
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.28),
+        0 0 18px rgba(34, 211, 238, 0.08);
+}
+
+
+body > section:first-of-type
+.cybercrime-types a:hover::after {
+    width: 55%;
+}
+
+
+/* Active / clicked */
+body > section:first-of-type
+.cybercrime-types a:active {
+
+    transform:
+        translateY(-1px)
+        scale(0.97);
+}
+
+
+/* Keyboard accessibility */
+body > section:first-of-type
+.cybercrime-types a:focus-visible {
+
+    outline: 2px solid #22d3ee;
+    outline-offset: 2px;
+
+    color: #ffffff;
+
+    border-color: #22d3ee;
+}
+
+
+/* =========================================================
+   DIFFERENT MENU COLORS
+   ========================================================= */
+
+
+/* Financial */
+body > section:first-of-type
+.cybercrime-types li:nth-child(1) a:hover {
+
+    border-color: rgba(34, 197, 94, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34, 197, 94, 0.14),
+            rgba(34, 211, 238, 0.06)
+        );
+}
+
+body > section:first-of-type
+.cybercrime-types li:nth-child(1) a::after {
+    background: #22c55e;
+}
+
+
+/* Privacy */
+body > section:first-of-type
+.cybercrime-types li:nth-child(2) a:hover {
+
+    border-color: rgba(168, 85, 247, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(168, 85, 247, 0.14),
+            rgba(236, 72, 153, 0.06)
+        );
+}
+
+body > section:first-of-type
+.cybercrime-types li:nth-child(2) a::after {
+    background: #a855f7;
+}
+
+
+/* Harassment */
+body > section:first-of-type
+.cybercrime-types li:nth-child(3) a:hover {
+
+    border-color: rgba(236, 72, 153, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(236, 72, 153, 0.14),
+            rgba(168, 85, 247, 0.06)
+        );
+}
+
+body > section:first-of-type
+.cybercrime-types li:nth-child(3) a::after {
+    background: #ec4899;
+}
+
+
+/* Device */
+body > section:first-of-type
+.cybercrime-types li:nth-child(4) a:hover {
+
+    border-color: rgba(239, 68, 68, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(239, 68, 68, 0.14),
+            rgba(245, 158, 11, 0.06)
+        );
+}
+
+body > section:first-of-type
+.cybercrime-types li:nth-child(4) a::after {
+    background: #ef4444;
+}
+
+
+/* Identity */
+body > section:first-of-type
+.cybercrime-types li:nth-child(5) a:hover {
+
+    border-color: rgba(245, 158, 11, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245, 158, 11, 0.14),
+            rgba(34, 211, 238, 0.06)
+        );
+}
+
+body > section:first-of-type
+.cybercrime-types li:nth-child(5) a::after {
+    background: #f59e0b;
+}
+
+
+/* =========================================================
+   KEEP CONTENT BELOW THE FIXED MENU
+   ========================================================= */
+
+body > article:first-of-type {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    body {
+        padding-top: 205px;
+    }
+
+    body > section:first-of-type {
+        padding: 10px 12px;
+    }
+
+    body > section:first-of-type
+    .cybercrime-types ul {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    body > section:first-of-type
+    .cybercrime-types a {
+
+        min-height: 44px;
+
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 315px;
+    }
+
+    body > section:first-of-type {
+        padding: 9px 10px;
+    }
+
+    body > section:first-of-type
+    .cybercrime-types ul {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    body > section:first-of-type
+    .cybercrime-types a {
+
+        min-height: 43px;
+
+        padding: 6px 8px;
+
+        font-size: 0.7rem;
+
+        border-radius: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding-top: 350px;
+    }
+
+    body > section:first-of-type
+    .cybercrime-types a {
+
+        font-size: 0.66rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body > section:first-of-type
+    .cybercrime-types a,
+    body > section:first-of-type
+    .cybercrime-types a::before,
+    body > section:first-of-type
+    .cybercrime-types a::after {
+
+        transition: none;
+    }
+}
