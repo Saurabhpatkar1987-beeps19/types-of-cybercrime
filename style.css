@@ -2033,3 +2033,357 @@ body > article:first-of-type {
         transition: none;
     }
 }
+
+/* =========================================================
+   30. DEVICE COMPATIBILITY
+   Responsive support for all screen sizes
+   ========================================================= */
+
+/* Prevent width/overflow problems */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+/* Make all elements responsive */
+*,
+*::before,
+*::after {
+    max-width: 100%;
+}
+
+/* Responsive images, videos and media */
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+data {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+}
+
+/* Prevent long URLs/text from breaking layout */
+a,
+code,
+pre,
+data {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Responsive form elements */
+input,
+textarea,
+select,
+button {
+    max-width: 100%;
+    font: inherit;
+}
+
+/* Better touch interaction on phones */
+button,
+a,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+/* =========================================================
+   VERY LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+    body > article,
+    body > section:not(:first-of-type) {
+        max-width: 1280px;
+    }
+
+    body > section:first-of-type > article,
+    body > section:first-of-type .cybercrime-types {
+        max-width: 1280px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP / DESKTOP
+   ========================================================= */
+
+@media (min-width: 1025px) {
+
+    body > article,
+    body > section {
+        width: min(94%, var(--content-width));
+    }
+
+    .cybercrime-types ul {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body > article,
+    body > section:not(:first-of-type) {
+        width: calc(100% - 30px);
+    }
+
+    body > section:first-of-type .cybercrime-types ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    body > section:first-of-type .cybercrime-types a {
+        min-height: 48px;
+        font-size: 0.74rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+   ========================================================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body > article,
+    body > section:not(:first-of-type) {
+        width: calc(100% - 24px);
+    }
+
+    body > article,
+    body > section > article {
+        border-radius: 18px;
+    }
+
+    body > section:first-of-type .cybercrime-types ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body > section:first-of-type .cybercrime-types a {
+        min-height: 46px;
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body > article,
+    body > section:not(:first-of-type) {
+        width: calc(100% - 16px);
+        max-width: none;
+    }
+
+    body > article,
+    body > section > article {
+        border-radius: 16px;
+    }
+
+    /* Prevent content touching screen edges */
+    body > article,
+    body > section > article {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    /* Navigation */
+    body > section:first-of-type {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    body > section:first-of-type .cybercrime-types {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body > section:first-of-type .cybercrime-types ul {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body > section:first-of-type .cybercrime-types li {
+        min-width: 0;
+    }
+
+    body > section:first-of-type .cybercrime-types a {
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+        padding: 6px;
+        font-size: 0.68rem;
+    }
+
+    /* Content */
+    section article data {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section article ol,
+    section article ul {
+        max-width: 100%;
+    }
+
+    /* Prevent horizontal overflow from nested lists */
+    section article ol ol,
+    section article ol ul {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    body > h1 {
+        font-size: 1.8rem;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    body > article,
+    body > section:not(:first-of-type) {
+        width: calc(100% - 10px);
+    }
+
+    body > article,
+    body > section > article {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    body > section:first-of-type .cybercrime-types ul {
+        gap: 4px;
+    }
+
+    body > section:first-of-type .cybercrime-types a {
+        min-height: 40px;
+        padding: 5px 4px;
+        font-size: 0.62rem;
+    }
+
+    section article li {
+        font-size: 0.88rem;
+    }
+
+    section article data {
+        font-size: 0.88rem;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+   ========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    body > section:first-of-type {
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+
+    body {
+        padding-top: 170px;
+    }
+
+    body > section:first-of-type .cybercrime-types a {
+        min-height: 38px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .cybercrime-types a:hover {
+        transform: none;
+    }
+
+    section article li:hover {
+        transform: none;
+    }
+
+    section article data:hover {
+        transform: none;
+    }
+
+    /* Comfortable touch target */
+    .cybercrime-types a {
+        min-height: 44px;
+    }
+}
+
+
+/* =========================================================
+   SAFE AREA — MODERN PHONES
+   ========================================================= */
+
+@supports (padding: env(safe-area-inset-top)) {
+
+    body > section:first-of-type {
+        padding-top: calc(
+            9px + env(safe-area-inset-top)
+        );
+    }
+
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+}
